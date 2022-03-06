@@ -24,7 +24,11 @@ function calculations(operator) {
         if (oldOperator === "+") {
             total += intBuffer;
         } else if (oldOperator === "÷") {
-            total = (total / intBuffer).toFixed(10);
+            if (total % intBuffer === 0) {
+                total = (total / intBuffer)
+            } else {
+                total = (total / intBuffer).toFixed(10);
+            }
         } else if (oldOperator === "x") {
             total *= intBuffer;
         } else if (oldOperator === "-") {
